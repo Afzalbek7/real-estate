@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.store.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div>
+
+
+        <form id="formLogIn">
+
+            <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" name="username" id="nameLogIn" placeholder="name">
+                <label for="name">First name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" name="password" id="email"
+                    placeholder="Email">
+                <label for="email">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="password" id="floatingPasswordLogIn"
+                    placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <button type="button" id="submit" onclick="checkUser()">logIn</button>
+            <button type="button" onclick="regUser()">registr</button>
+
+
+        </form>
+
+
+        <form id="regDiv" style="display: none;">
+            <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" name="name" id="nameRegistr" placeholder="name">
+                <label for="name">First name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="password" id="floatingPasswordRegistr"
+                    placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="country" id="country" placeholder="Country">
+                <label for="country">Country</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="role" id="role" placeholder="Country">
+                <label for="country">Role</label>
+            </div>
+
+            <button type="button" onclick="saveCustomerUser()">save</button>
+        </form>
+
+
+
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+    integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+    crossorigin="anonymous"></script>
+
+
+<script>
+
+    var URI = 'http://localhost:8080/api'
+
+    function checkUser() {
+        $.ajax({
+            url: URI + '/login',
+            type: 'POST',
+            data: $('#formLogIn').serialize(),
+            dataType: 'json',
+            headers: { "Authorization": "Bearer " + localStorage.getItem('token') },
+
+            success: function (response) {
+                localStorage.setItem("token", response.token)
+                // window.location = "productsForCustomer.html"
+                if (parseJwt(localStorage.getItem('token')).roles[0].name == 'ROLE_ADMIN'
+                    //   ||
+                    //   parseJwt(localStorage.getItem('token')).roles[1].name == 'ROLE_ADMIN'
+                ) {
+                    window.location = "panel.html"
+                } else if (parseJwt(localStorage.getItem('token')).roles[0].name == 'ROLE_USER'
+                    //   ||
+                    //   parseJwt(localStorage.getItem('token')).roles[1].name == 'ROLE_USER'
+                ) {
+                    window.location = "productsForCustomer.html"
+
+                }
+
+
+
+            }
+        })
+
+
+    }
+
+
+    function regUser() {
+        document.querySelector('#formLogIn').style.display = "none"
+        document.querySelector('#regDiv').style.display = "inline"
+    }
+
+
+
+    function saveCustomerUser() {
+
+        $.ajax({
+            url: URI + '/customers',
+            type: 'POST',
+            data: $('#regDiv').serialize(),
+            dataType: 'json',
+            headers: { "Authorization": "Bearer " + localStorage.getItem('token') },
+
+            success: function (response) {
+                console.log(response);
+            }
+        })
+
+    }
+
+    function parseJwt(token) {
+        var base64Url = token.split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+
+        return JSON.parse(jsonPayload);
+    };
+</script>
+
+</html>

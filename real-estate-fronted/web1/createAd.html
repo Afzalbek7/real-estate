@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+    <style>
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</head>
+
+
+
+<body>
+
+    <form id="my-form">
+
+        <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" placeholder="Title..">
+        </div>
+
+        <div>
+            <label for="desc">Description</label>
+            <input type="text" id="desc" name="desc" placeholder="Description.."">
+        </div>
+
+        <div>
+            <label for=" file">File</label>
+            <input type="file" multiple id="file" name="file" placeholder="file..">
+        </div>
+    
+
+        <div>
+            <button type="submit">create</button>
+        </div>
+
+
+    </form>
+
+</body>
+
+<script>
+    var files = [];
+    var ins = document.getElementById('file');
+    var form = document.getElementById('my-form');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        files = [...ins.files];
+        const toJSON = JSON.stringify(files);
+        console.log(toJSON);
+        console.log(files[0]);
+    })
+        // for (var x = 0; x < ins; x++) {
+        //     fd.append("fileToUpload[]", document.getElementById('fileToUpload').files[x]);
+        // }
+
+        // $.ajax({
+        //     url: 'http://localhost:8084/api/upload',
+        //     type: 'POST',
+        //     data: fd,
+        //     success: function (data) {
+        //         // fileId = data
+        //         alert(data)
+        //     },
+        //     cache: false,
+        //     contentType: false,
+        //     processData: false
+        // })
+
+        // var formData = new FormData();
+        // formData.append('file', data)
+
+
+        // var images = document.querySelector('#file').files[0]
+        // formData.append('file', images)
+        // console.log(formData);
+
+        // var names = [];
+        // for (var i = 0; i < $(this).get(0).files.length; ++i) {
+        //     names.push($(this).get(0).files[i].name);
+        // }
+        // $("input[name=file]").val(names);
+        // formData.append('files', names)
+        // console.log(names);
+        // console.log(formData);
+
+
+        // var ins = document.getElementById('file').files.length;
+        // for (var x = 0; x < ins; x++) {
+        //     formData.append("fileToUpload[]", document.getElementById('file').files[x]);
+        // }
+
+
+
+
+
+
+  
+</script>
+
+</html>

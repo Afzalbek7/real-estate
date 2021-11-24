@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <div>
+
+        <div class="container">
+            <div id="imgRow" class="row">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+<script>
+
+    $(document).ready(function () {
+        let imgRow = document.querySelector('#imgRow')
+        $.ajax({
+            url: 'http://localhost:8084/api/ads',
+            type: 'GET',
+            success: function (data) {
+                console.log(data);
+                data.forEach(element => {
+                    let hashId = element.fileStorageList[0].hashId;
+                    
+                    imgRow.innerHTML +=
+
+                    `
+                        <a id="#link_id_for_ad" href="viewAd.html?id=${element.id}">
+                            <div class="col-sm-4" href="viewAd.html">
+                                <div class="card" style="width: 18rem;">
+                                    <img id="theImg" src="http://localhost:8084/api/preview/${hashId}"
+                                        width="100%" height="250px" />
+                                    <div class="card-body">
+                                        <h5 class="card-title">${element.title}</h5>
+                                        <p class="card-text">${element.price}</p>
+                    
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    `
+                    
+
+                })
+            }
+        })
+    })
+
+
+
+</script>
+<style>
+    .carousel .item {
+  height: 300px;
+}
+
+.item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+}
+</style>
+</html>
