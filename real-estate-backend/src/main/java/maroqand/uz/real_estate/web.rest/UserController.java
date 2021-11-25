@@ -18,7 +18,7 @@ public class UserController {
 
 
     @PostMapping("/register")
-    public ResponseEntity<User> create(@RequestBody User user) {
+    public ResponseEntity<User> create(User user) {
         if (!userService.checkPasswordLength(user.getPassword())){
             return new ResponseEntity("Parol uzunligi 5 ta dan kam", HttpStatus.BAD_REQUEST);
         }

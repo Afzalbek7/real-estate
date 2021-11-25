@@ -1,12 +1,15 @@
 package maroqand.uz.real_estate.service;
 
+import maroqand.uz.real_estate.domain.Role;
 import maroqand.uz.real_estate.domain.User;
 import maroqand.uz.real_estate.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class UserService {

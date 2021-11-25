@@ -39,32 +39,32 @@
 
         <div>
             <label for="desc">Description</label>
-            <input type="text" id="desc" name="description" placeholder="description.."">
+            <input type="text" id="desc" name="description" placeholder="description..">
             
         </div>
 
         <div>
             <label for="floorNumber">Description</label>
-            <input type="number" id="floorNumber" name="floorNumber" placeholder="floorNumber.."">
+            <input type="number" id="floorNumber" name="floorNumber" placeholder="floorNumber..">
             
         </div>
 
         <div>
             <label for="numberOfRooms">Description</label>
-            <input type="number" id="numberOfRooms" name="numberOfRooms" placeholder="numberOfRooms.."">
+            <input type="number" id="numberOfRooms" name="numberOfRooms" placeholder="numberOfRooms..">
             
         </div>
 
         <div>
             <label for="price">Description</label>
-            <input  id="price" name="price" placeholder="price.."">
+            <input  id="price" name="price" placeholder="price..">
             
         </div>
 
 
         <div>
             <label for="square">Description</label>
-            <input type="number" id="square" name="square" placeholder="square.."">
+            <input type="number" id="square" name="square" placeholder="square..">
         </div>
 
         <div>
@@ -93,10 +93,10 @@
                     <img alt="Main Image preview" id="thumnail0" width="200px" height="200px">
                 </p>
                 <p>
-                    <label for="extraImage">Extra Image #1:</label>
+                    <label for="extraImage1">Extra Image #1:</label>
                 </p>
                 <p>
-                    <input type="file" name="extraImage" accept="image/*">
+                    <input type="file" id="extraImage1" name="extraImage" accept="image/*">
                 </p>
             </div>
 
@@ -105,10 +105,10 @@
                     <img alt="Main Image preview" id="thumnail1" width="200px" height="200px">
                 </p>
                 <p>
-                    <label for="extraImage">Extra Image #2</label>
+                    <label for="extraImage2">Extra Image #2</label>
                 </p>
                 <p>
-                    <input type="file" name="extraImage" accept="image/*">
+                    <input type="file" id="extraImage2" name="extraImage" accept="image/*">
                 </p>
             </div>
 
@@ -117,10 +117,10 @@
                     <img alt="Main Image preview" id="thumnail2" width="200px" height="200px">
                 </p>
                 <p>
-                    <label for="">Extra Image #3</label>
+                    <label for="extraImage3">Extra Image #3</label>
                 </p>
                 <p>
-                    <input type="file" name="extraImage" accept="image/*">
+                    <input id="extraImage3" type="file" name="extraImage" accept="image/*">
                 </p>
             </div>
 
@@ -177,7 +177,7 @@
 
         $('form#data').submit(function (e) {
             e.preventDefault();
-
+            console.log("dqwdqw")
             console.log('from submit');
             var form = new FormData($("#data")[0]);
 
@@ -230,23 +230,7 @@
     }
 
 
-
-
-
-
-
-
 </script>
 
-
-<style>
-    /* #photo_row_col {
-        margin-left: 5;
-        margin-right: 5;
-
-        padding-right: 5;
-        padding-left: 5;
-    } */
-</style>
 
 </html>

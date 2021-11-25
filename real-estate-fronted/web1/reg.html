@@ -23,17 +23,17 @@
 
             <div class="form-floating mb-3 mt-3">
                 <input type="text" class="form-control" name="username" id="nameLogIn" placeholder="name">
-                <label for="name">First name</label>
+                <label for="nameLogIn">First name</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" name="password" id="email"
+                <input type="email" class="form-control" name="email" id="email"
                     placeholder="Email">
                 <label for="email">Email</label>
             </div>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" name="password" id="floatingPasswordLogIn"
                     placeholder="Password">
-                <label for="floatingPassword">Password</label>
+                <label for="floatingPasswordLogIn">Password</label>
             </div>
             <button type="button" id="submit" onclick="checkUser()">logIn</button>
             <button type="button" onclick="regUser()">registr</button>
@@ -44,24 +44,23 @@
 
         <form id="regDiv" style="display: none;">
             <div class="form-floating mb-3 mt-3">
-                <input type="text" class="form-control" name="name" id="nameRegistr" placeholder="name">
-                <label for="name">First name</label>
+                <input type="text" class="form-control" name="name" id="nameRegister" placeholder="name">
+                <label for="nameRegister">First name</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="password" id="floatingPasswordRegistr"
+                <input type="text" class="form-control" name="password" id="floatingPasswordRegister"
                     placeholder="Password">
-                <label for="floatingPassword">Password</label>
+                <label for="floatingPasswordRegister">Password</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="country" id="country" placeholder="Country">
-                <label for="country">Country</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="role" id="role" placeholder="Country">
-                <label for="country">Role</label>
+                <input type="email" class="form-control" name="email" id="emailReg"
+                    placeholder="Email">
+                <label for="emailReg">Password</label>
             </div>
 
-            <button type="button" onclick="saveCustomerUser()">save</button>
+
+
+            <button type="button" onclick="saveUser()">save</button>
         </form>
 
 
@@ -79,7 +78,7 @@
 
 <script>
 
-    var URI = 'http://localhost:8080/api'
+    var URI = 'http://localhost:8084/api'
 
     function checkUser() {
         $.ajax({
@@ -90,20 +89,21 @@
             headers: { "Authorization": "Bearer " + localStorage.getItem('token') },
 
             success: function (response) {
-                localStorage.setItem("token", response.token)
-                // window.location = "productsForCustomer.html"
-                if (parseJwt(localStorage.getItem('token')).roles[0].name == 'ROLE_ADMIN'
-                    //   ||
-                    //   parseJwt(localStorage.getItem('token')).roles[1].name == 'ROLE_ADMIN'
-                ) {
-                    window.location = "panel.html"
-                } else if (parseJwt(localStorage.getItem('token')).roles[0].name == 'ROLE_USER'
-                    //   ||
-                    //   parseJwt(localStorage.getItem('token')).roles[1].name == 'ROLE_USER'
-                ) {
-                    window.location = "productsForCustomer.html"
-
-                }
+                console.log(response)
+                // localStorage.setItem("token", response.token)
+                // // window.location = "productsForCustomer.html"
+                // if (parseJwt(localStorage.getItem('token')).roles[0].name == 'ROLE_ADMIN'
+                //     //   ||
+                //     //   parseJwt(localStorage.getItem('token')).roles[1].name == 'ROLE_ADMIN'
+                // ) {
+                //     window.location = "panel.html"
+                // } else if (parseJwt(localStorage.getItem('token')).roles[0].name == 'ROLE_USER'
+                //     //   ||
+                //     //   parseJwt(localStorage.getItem('token')).roles[1].name == 'ROLE_USER'
+                // ) {
+                //     window.location = "productsForCustomer.html"
+                //
+                // }
 
 
 
@@ -121,14 +121,14 @@
 
 
 
-    function saveCustomerUser() {
+    function saveUser() {
 
         $.ajax({
-            url: URI + '/customers',
+            url: URI + '/register',
             type: 'POST',
             data: $('#regDiv').serialize(),
             dataType: 'json',
-            headers: { "Authorization": "Bearer " + localStorage.getItem('token') },
+            // headers: { "Authorization": "Bearer " + localStorage.getIt+em('token') },
 
             success: function (response) {
                 console.log(response);

@@ -8,17 +8,17 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -27,98 +27,95 @@
 
 <body>
 
-    <form action="http://localhost:8084/api/upload" id="data" method="post" enctype="multipart/form-data"
-        class="container" style="background-color:whitesmoke;">
+<form action="http://localhost:8084/api/upload" id="data" method="post" enctype="multipart/form-data"
+      class="container" style="background-color:whitesmoke;">
 
 
+    <div>
+        <label for="title">Укажите название*</label><br>
+        <input type="text" id="title" name="title" placeholder="Например Продается..." style="width: 550px;">
 
-        <div>
-            <label for="title">Укажите название*</label><br>
-            <input type="text" id="title" name="title" placeholder="Например Продается..." style="width: 550px;">
+    </div>
 
+    <!-- <div>
+        <label for="desc">Описание*</label><br>
+        <area><input type="text" id="desc" name="description" class="title"
+            placeholder="Подумайте, какие подробности вы хотели бы узнать из объявления.">
+        </area>
+        <style>
+            .title {
+                height: 200px;
+                width: 550px;
+            }
+        </style>
+    </div> -->
+
+    <div class="form-group" for="desc">
+        <label for="desc">Описание*</label>
+        <textarea type="text" id="desc" name="description"
+                  placeholder="Подумайте, какие подробности вы хотели бы узнать из объявления." class="form-control"
+                  rows="3"></textarea>
+    </div>
+
+    <div>
+        <label for="price">Цена*</label><br>
+        <input id="price" name="price" placeholder="Цена">
+        <style>
+            .dropbtn {
+                background-color: powderblue;
+                color: white;
+                padding: 5px;
+                font-size: 18px;
+                border: none;
+            }
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f1f1f1;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+                background-color: #85a586;
+            }
+        </style>
+        </head>
+
+        <body>
+
+
+        <div class="dropdown">
+            <button class="dropbtn">Выберите</button>
+            <div class="dropdown-content">
+                <a href="#">USD</a>
+                <a href="#">UZS</a>
+                <a href="#">Y.E.</a>
+            </div>
         </div>
 
-        <!-- <div>
-            <label for="desc">Описание*</label><br>
-            <area><input type="text" id="desc" name="description" class="title"
-                placeholder="Подумайте, какие подробности вы хотели бы узнать из объявления.">
-            </area>
-            <style>
-                .title {
-                    height: 200px;
-                    width: 550px;
-                }
-            </style>
-        </div> -->
-
-        <div class="form-group" for="desc">
-            <label for="desc">Описание*</label>
-            <textarea type="text" id="desc" name="description"
-                placeholder="Подумайте, какие подробности вы хотели бы узнать из объявления." class="form-control"
-                rows="3"></textarea>
-        </div>
-
-        <div>
-            <label for="price">Цена*</label><br>
-            <input id="price" name="price" placeholder="Цена">
-            <style>
-                .dropbtn {
-                    background-color: powderblue;
-                    color: white;
-                    padding: 5px;
-                    font-size: 18px;
-                    border: none;
-                }
-
-                .dropdown {
-                    position: relative;
-                    display: inline-block;
-                }
-
-                .dropdown-content {
-                    display: none;
-                    position: absolute;
-                    background-color: #f1f1f1;
-                    min-width: 160px;
-                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                    z-index: 1;
-                }
-
-                .dropdown-content a {
-                    color: black;
-                    padding: 12px 16px;
-                    text-decoration: none;
-                    display: block;
-                }
-
-                .dropdown-content a:hover {
-                    background-color: #ddd;
-                }
-
-                .dropdown:hover .dropdown-content {
-                    display: block;
-                }
-
-                .dropdown:hover .dropbtn {
-                    background-color: #85a586;
-                }
-            </style>
-            </head>
-
-            <body>
-
-
-                <div class="dropdown">
-                    <button class="dropbtn">Выберите</button>
-                    <div class="dropdown-content">
-                        <a href="#">USD</a>
-                        <a href="#">UZS</a>
-                        <a href="#">Y.E.</a>
-                    </div>
-                </div>
-
-
-        </div>
 
         <div>
             <label for="floorNumber">Количество комнат*</label><br>
@@ -131,8 +128,6 @@
             <input type="number" id="numberOfRooms" name="numberOfRooms" placeholder="Этаж">
 
         </div>
-
-
 
 
         <div>
@@ -168,10 +163,10 @@
                     <img alt="Main Image preview" id="thumnail0" width="200px" height="200px">
                 </p>
                 <p>
-                    <label for="extraImage">Добавить фото #1:</label>
+                    <label for="extraImage1">Добавить фото #1:</label>
                 </p>
                 <p>
-                    <input type="file" name="extraImage" accept="image/*">
+                    <input type="file" id="extraImage1" name="extraImage" accept="image/*">
                 </p>
             </div>
 
@@ -180,10 +175,10 @@
                     <img alt="Main Image preview" id="thumnail1" width="200px" height="200px">
                 </p>
                 <p>
-                    <label for="extraImage">Extra Image #2</label>
+                    <label for="extraImage2">Extra Image #2</label>
                 </p>
                 <p>
-                    <input type="file" name="extraImage" accept="image/*">
+                    <input type="file" id="extraImage2" name="extraImage" accept="image/*">
                 </p>
             </div>
 
@@ -192,15 +187,12 @@
                     <img alt="Main Image preview" id="thumnail2" width="200px" height="200px">
                 </p>
                 <p>
-                    <label for="">Extra Image #3</label>
+                    <label for="extraImage3">Extra Image #3</label>
                 </p>
                 <p>
-                    <input type="file" name="extraImage" accept="image/*">
+                    <input type="file" id="extraImage3" name="extraImage" accept="image/*">
                 </p>
             </div>
-
-
-
 
 
         </div>
@@ -239,13 +231,8 @@
                 }
             </style>
         </div>
-        </div>
-    </form>
-
-    <div id="alert_id" class="alert alert-success" style="visibility: hidden; position: absolute; left: 0; top: 0;"
-        role="alert">
-        This is a success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
     </div>
+</form>
 
 </body>
 
@@ -274,13 +261,11 @@
                 document.getElementById('lb_phone_number').style.visibility = "visible"
                 document.getElementById('lb_phone_number').style.color = "red"
 
-            }
-            else if (mobile.test(number)) {
+            } else if (mobile.test(number)) {
                 document.getElementById('lb_phone_number').innerHTML = "Valid"
                 document.getElementById('lb_phone_number').style.visibility = "visible"
                 document.getElementById('lb_phone_number').style.color = "green"
-            }
-            else if (!mobile.test(number)) {
+            } else if (!mobile.test(number)) {
                 document.getElementById('lb_phone_number').innerHTML = "Invalid"
                 document.getElementById('lb_phone_number').style.visibility = "visible"
                 document.getElementById('lb_phone_number').style.color = "red"
@@ -340,14 +325,7 @@
         reader.readAsDataURL(file);
 
 
-
     }
-
-
-
-
-
-
 
 
 </script>
