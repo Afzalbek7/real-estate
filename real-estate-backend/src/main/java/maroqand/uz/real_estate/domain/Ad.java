@@ -3,6 +3,7 @@ package maroqand.uz.real_estate.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity(name = "ad")
@@ -22,13 +23,13 @@ public class Ad {
     private String mainImage;
 
     @Column(name = "extra_image1")
-    private  String extraImage1;
+    private String extraImage1;
 
     @Column(name = "extra_image2")
-    private  String extraImage2;
+    private String extraImage2;
 
     @Column(name = "extra_image3")
-    private  String extraImage3;
+    private String extraImage3;
 
     @OneToMany(mappedBy = "ad", fetch = FetchType.EAGER)
     private List<FileStorage> fileStorageList;
@@ -48,6 +49,11 @@ public class Ad {
     @Column(name = "phone_number")
     private String phoneNumber;
 
+    @Column(name = "create_on")
+    private Date createOn;
+
+    @Column(name = "deleted")
+    private boolean deleted = false;
 
 
     public Long getId() {
@@ -107,28 +113,28 @@ public class Ad {
     }
 
     @Transient
-    public String getMainImagePath(){
+    public String getMainImagePath() {
         if (id == null || mainImage == null) return null;
 
         return "/ad-images/" + id + "/" + mainImage;
     }
 
     @Transient
-    public String getExtraImagePath1(){
+    public String getExtraImagePath1() {
         if (id == null || extraImage1 == null) return null;
 
         return "/ad-images/" + id + "/" + extraImage1;
     }
 
     @Transient
-    public String getMainImagePath2(){
+    public String getMainImagePath2() {
         if (id == null || extraImage2 == null) return null;
 
         return "/ad-images/" + id + "/" + extraImage2;
     }
 
     @Transient
-    public String getMainImagePath3(){
+    public String getMainImagePath3() {
         if (id == null || extraImage3 == null) return null;
 
         return "/ad-images/" + id + "/" + extraImage3;
@@ -180,5 +186,21 @@ public class Ad {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public Date getCreateOn() {
+        return createOn;
+    }
+
+    public void setCreateOn(Date createOn) {
+        this.createOn = createOn;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 }

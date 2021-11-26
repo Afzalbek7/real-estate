@@ -73,6 +73,18 @@ public class FileController {
         return ResponseEntity.ok(adService.getAll());
     }
 
+    @PutMapping("/ads")
+    public ResponseEntity<Ad> updateAd(@RequestBody Ad ad) {
+        if (ad.getId() == null) {
+            throw new IllegalStateException("Id this ad does not exists");
+        }
+        return ResponseEntity.ok(adService.update(ad));
+    }
+
+    @DeleteMapping("/ads/{adId}")
+    public ResponseEntity<String> deleteAd(@PathVariable Long adId) {
+        return ResponseEntity.ok(adId + "- ad deleted");
+    }
 
 }
 
