@@ -8,13 +8,11 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    User findByName(String name);
 
-    boolean existsByName(String name);
+    boolean existsByUserName(String user);
 
-    @Query(value = "select id from customers where name = :userName", nativeQuery = true)
-    Long findCustomerIdByUserName(@Param("userName") String userName);
-
-    @Query(value = "select * from real_estate_user where userName = :userName", nativeQuery = true )
+    @Query(value = "select * from real_estate_user where user_name = :userName", nativeQuery = true )
     User findByLogin(@Param("userName") String userName);
+
+    User findByUserName(String username);
 }

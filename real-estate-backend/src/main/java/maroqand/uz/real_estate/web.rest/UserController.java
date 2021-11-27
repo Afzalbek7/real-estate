@@ -22,7 +22,7 @@ public class UserController {
         if (!userService.checkPasswordLength(user.getPassword())){
             return new ResponseEntity("Parol uzunligi 5 ta dan kam", HttpStatus.BAD_REQUEST);
         }
-        if (userService.checkCustomerName(user.getName())){
+        if (userService.checkCustomerName(user.getUserName())){
             return new ResponseEntity("Bu customer oldin ro'yaxtdan o'tgan", HttpStatus.BAD_REQUEST);
         }
         return ResponseEntity.ok(userService.save(user));

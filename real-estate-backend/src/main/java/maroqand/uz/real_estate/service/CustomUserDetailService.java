@@ -7,10 +7,12 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+@Component
 public class CustomUserDetailService implements UserDetailsService {
     private final UserRepository userRepository;
 
@@ -20,7 +22,7 @@ public class CustomUserDetailService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByName(username);
+        User user = userRepository.findByUserName(username);
         return new UserDetails() {
             @Override
             public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -34,7 +36,7 @@ public class CustomUserDetailService implements UserDetailsService {
 
             @Override
             public String getUsername() {
-                return user.getName();
+                return user.getUserName();
             }
 
             @Override

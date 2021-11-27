@@ -1,5 +1,7 @@
 package maroqand.uz.real_estate.config;
 
+import maroqand.uz.real_estate.security.JwtConfigurer;
+import maroqand.uz.real_estate.security.JwtTokenProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
@@ -15,8 +17,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private final UserDetailsService userDetailsService;
 
-    public SecurityConfiguration(@Lazy UserDetailsService userDetailsService) {
+    private final JwtTokenProvider jwtTokenProvider;
+
+    public SecurityConfiguration(@Lazy UserDetailsService userDetailsService, JwtTokenProvider jwtTokenProvider) {
         this.userDetailsService = userDetailsService;
+        this.jwtTokenProvider = jwtTokenProvider;
     }
 
     @Bean
@@ -31,17 +36,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.cors().and()
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/ads").permitAll()
-                .antMatchers("/api/ads/**").permitAll()
-                .antMatchers("/api/preview/**").permitAll()
-                .antMatchers("/api/upload").permitAll()
-                .antMatchers("/api/register").permitAll()
+                .antMatchers("/api/ads").hasRole("USER")
+//                .antMatchers("/api/ads/**").permitAll()
+//                .antMatchers("/api/preview/**").permitAll()
+//                .antMatchers("/api/upload").permitAll()
+//                .antMatchers("/api/register").permitAll()
                 .antMatchers("/api/login").permitAll()
+                .antMatchers("/api/register").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .httpBasic();
-//                .apply(new JwtConfigurer(jwtTokenProvider));
+                .apply(new JwtConfigurer(jwtTokenProvider));
     }
-
-
 }

@@ -24,16 +24,16 @@ import java.util.Set;
 
 @Component
 public class JwtTokenProvider {
-//    private final UserDetailsService userDetailsService;
+    private final UserDetailsService userDetailsService;
     @Value("${jwt.token.secret}")
     private String secret;
 
     @Value("${jwt.token.validity}")
     private Long validityMS;
 
-//    public JwtTokenProvider(UserDetailsService userDetailsService) {
-//        this.userDetailsService = userDetailsService;
-//    }
+    public JwtTokenProvider(UserDetailsService userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
 
 
     @Bean
@@ -77,13 +77,13 @@ public class JwtTokenProvider {
         return null;
     }
 
-//    public Authentication getAuthentication(String token) {
-//        UserDetails userDetails = this.userDetailsService.loadUserByUsername(getUser(token));
-//
-//        return new UsernamePasswordAuthenticationToken(userDetails,"",userDetails.getAuthorities());
-//    }
-//
-//    private String getUser(String token) {
-//        return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody().getSubject();
-//    }
+    public Authentication getAuthentication(String token) {
+        UserDetails userDetails = this.userDetailsService.loadUserByUsername(getUser(token));
+
+        return new UsernamePasswordAuthenticationToken(userDetails,"",userDetails.getAuthorities());
+    }
+
+    private String getUser(String token) {
+        return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody().getSubject();
+    }
 }

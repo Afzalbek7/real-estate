@@ -16,7 +16,7 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String userName;
 
     private String password;
 
@@ -29,7 +29,6 @@ public class User implements Serializable {
             inverseJoinColumns = {@JoinColumn(name = "role_name", referencedColumnName = "name")})
     private Set<Role> roles = new HashSet<>();
 
-    @Enumerated(EnumType.STRING)
     private Status status;
 
     public Set<Role> getRoles() {
@@ -52,12 +51,12 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public void setId(Long id) {

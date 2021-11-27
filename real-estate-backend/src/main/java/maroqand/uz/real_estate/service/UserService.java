@@ -31,8 +31,8 @@ public class UserService {
     }
 
     public User getById(Long id) {
-        Optional<User> customer = userRepository.findById(id);
-        return customer.orElse(null);
+        Optional<User> user = userRepository.findById(id);
+        return user.orElse(null);
     }
 
     public void deleteUser(Long id) {
@@ -44,6 +44,6 @@ public class UserService {
     }
 
     public Boolean checkCustomerName(String name) {
-        return userRepository.existsByName(name);
+        return userRepository.existsByUserName(name);
     }
 }

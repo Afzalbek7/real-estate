@@ -36,14 +36,15 @@ public class UserJwtController {
 
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody LoginVM loginVM) {
+        System.out.println(loginVM);
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginVM.getUsername(), loginVM.getPassword()));
-        User user = userRepository.findByName(loginVM.getUsername());
+        User user = userRepository.findByUserName(loginVM.getUsername());
         if (user == null) {
             throw new UsernameNotFoundException("bu foydalanuvchi mavjud emas");
         }
-        String token = jwtTokenProvider.createToken(user.getName(), user.getRoles());
+        String token = jwtTokenProvider.createToken(user.getUserName(), user.getRoles());
         Map<Object, Object> map = new HashMap<>();
-        map.put("username", user.getName());
+        map.put("username", user.getUserName());
         map.put("token", token);
         return ResponseEntity.ok(map);
     }
