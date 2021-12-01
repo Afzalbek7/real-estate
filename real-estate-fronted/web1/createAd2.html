@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="addstyle.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -30,107 +32,151 @@
         role="alert">
         This is a success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
     </div>
-    <form action="http://localhost:8084/api/upload" id="data" method="post" enctype="multipart/form-data">
+    <form action="http://localhost:8084/api/upload" id="data" method="post" 
+    enctype="multipart/form-data" class="container" style="background-color:whitesmoke;">
+
+        
 
         <div>
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title" placeholder="Title..">
-        </div>
-
-        <div>
-            <label for="desc">Description</label>
-            <input type="text" id="desc" name="description" placeholder="description..">
+            <label for="title">Укажите название*</label><br>
+            <input type="text" id="title" name="title" placeholder="Например Продается..." style="width: 550px;">
             
         </div>
 
         <div>
-            <label for="floorNumber">Description</label>
-            <input type="number" id="floorNumber" name="floorNumber" placeholder="floorNumber..">
+            <label for="desc">Описание*</label><br>
+            <area><input type="text" id="desc" name="description"  class="title" placeholder="Подумайте, какие подробности вы хотели бы узнать из объявления.">
+        </area><style>
+                .title{
+                    height: 200px;
+                    width: 550px;
+                }
+            </style>
+        </div>
+
+        <div>
+            <label for="price">Цена*</label><br>
+            <input  id="price" name="price" placeholder="Цена">
+        
+                </head>
+                <body>
+                
+                
+                <div class="dropdown">
+                  <button class="dropbtn">Выберите</button>
+                  <div class="dropdown-content">
+                    <a href="#">USD</a>
+                    <a href="#">UZS</a>
+                    <a href="#">Y.E.</a>
+                  </div>
+                </div>
+                
             
         </div>
 
         <div>
-            <label for="numberOfRooms">Description</label>
-            <input type="number" id="numberOfRooms" name="numberOfRooms" placeholder="numberOfRooms..">
+            <label for="floorNumber">Количество комнат*</label><br>
+            <input type="number" id="floorNumber" name="floorNumber" placeholder=" ">
             
         </div>
 
         <div>
-            <label for="price">Description</label>
-            <input  id="price" name="price" placeholder="price..">
+            <label for="numberOfRooms">Этаж*</label><br>
+            <input type="number" id="numberOfRooms" name="numberOfRooms" placeholder="Этаж">
             
         </div>
 
+        
+
 
         <div>
-            <label for="square">Description</label>
-            <input type="number" id="square" name="square" placeholder="square..">
+            <label for="square">Общая площадь*</label><br>
+            <input type="number" id="square" name="square" placeholder="м^2">
         </div>
 
         <div>
             <!-- <label for=" phone_number">Phone Number</label> -->
-            <input type="tel" id="phone_number" name="phoneNumber" placeholder="PhoneNumber..">
+            <label for="square">Номер телефона*</label><br>
+            <input type="tel" id="phone_number" name="phoneNumber" placeholder="Номер телефона">
+
             <label for="phone_number" id="lb_phone_number" style="color:red; visibility: hidden;">Invalid</label>
             <br>
         </div>
 
+<div class="add-file">
+        <div class="example-1" id="photo_row_col">
+            <p>
+                <img  id="thumnail">
+            </p>
 
-        <div class="row p-5 d-flex flex-wrap justify-content-between">
-            <div id="photo_row_col" class="col-6 mb-2 ml-2  border">
-                <p>
-                    <img alt="Main Image preview" id="thumnail" width="200px" height="200px">
-                </p>
-                <p>
-                    <label for="primaryImage">Main Image:</label>
-                </p>
-                <p>
-                    <input type="file" name="primaryImage" id="primaryImage" accept="image/*">
-                </p>
+            <div class="form-group">
+              <label class="label"  for="primaryImage">
+                <i class="material-icons">attach_file</i>
+                <span class="title">Добавить фото</span>
+                <input type="file"  name="primaryImage" id="primaryImage" accept="image/*">
+              </label>
             </div>
+            
+          </div>
 
-            <div class="col-6 mb-2 ml-2 border">
-                <p>
-                    <img alt="Main Image preview" id="thumnail0" width="200px" height="200px">
-                </p>
-                <p>
-                    <label for="extraImage1">Extra Image #1:</label>
-                </p>
-                <p>
-                    <input type="file" id="extraImage1" name="extraImage" accept="image/*">
-                </p>
-            </div>
 
-            <div class="col-6 mb-2 ml-2 border">
+            <div class="example-1" id="photo_row_col">
+                <p>
+                    <img alt="image" id="thumnail0" width="200px" height="200px">
+                </p>
+    
+                <div class="form-group">
+                  <label class="label"  for="extraImage">
+                    <i class="material-icons">attach_file</i>
+                    <span class="title">Добавить фото</span>
+                    <input type="file"  name="primaryImage" id="primaryImage" accept="image/*">
+                  </label>
+                </div>
+                
+
+              </div>
+
+              <div class="example-1" id="photo_row_col">
                 <p>
                     <img alt="Main Image preview" id="thumnail1" width="200px" height="200px">
                 </p>
-                <p>
-                    <label for="extraImage2">Extra Image #2</label>
-                </p>
-                <p>
-                    <input type="file" id="extraImage2" name="extraImage" accept="image/*">
-                </p>
-            </div>
+    
+                <div class="form-group">
+                  <label class="label"  for="extraImage">
+                    <i class="material-icons">attach_file</i>
+                    <span class="title">Добавить Фото</span>
+                    <input type="file"  name="primaryImage" id="primaryImage" accept="image/*">
+                  </label>
+                  
+                </div>
+                
 
-            <div class="col-6 mb-2 ml-2 border">
+              </div>
+
+
+              <div class="example-1" id="photo_row_col">
                 <p>
                     <img alt="Main Image preview" id="thumnail2" width="200px" height="200px">
                 </p>
-                <p>
-                    <label for="extraImage3">Extra Image #3</label>
-                </p>
-                <p>
-                    <input id="extraImage3" type="file" name="extraImage" accept="image/*">
-                </p>
+    
+                <div class="form-group">
+                  <label class="label"  for="extraImage">
+                    <i class="material-icons">attach_file</i>
+                    <span class="title">Добавить фото</span>
+                    <input type="file"  name="primaryImage" id="primaryImage" accept="image/*">
+                  </label>
+                </div>
+                
+
+              </div>
+
             </div>
 
-
-
-
-
         </div>
-
-        <button type="submit">send</button>
+    <div>
+            <button type="submit" class="btn success">Опубликовать</button>
+    </div>
+        </div>
     </form>
 
 
@@ -177,7 +223,7 @@
 
         $('form#data').submit(function (e) {
             e.preventDefault();
-            console.log("dqwdqw")
+
             console.log('from submit');
             var form = new FormData($("#data")[0]);
 
@@ -230,7 +276,8 @@
     }
 
 
-</script>
 
+
+</script>
 
 </html>

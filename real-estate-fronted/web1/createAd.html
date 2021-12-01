@@ -54,23 +54,72 @@
     <form id="my-form">
 
         <div>
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title" placeholder="Title..">
+            <label for="title">*Title</label>
+            <input type="text" id="title" name="title" placeholder="Загловок объявления">
         </div>
 
         <div>
-            <label for="desc">Description</label>
-            <input type="text" id="desc" name="desc" placeholder="Description.."">
+            <label for="desc">*Description</label>
+            <input type="text" id="desc" name="desc" placeholder="Описания" style="height:200px">
+            
         </div>
 
         <div>
-            <label for="file">File</label>
-            <input type="file" multiple id="file" name="file" placeholder="file..">
+            <label for=" file">*Image</label>
+                <input type="file" multiple id="file" name="file" placeholder="File.." class="btn-fayl">
+            <style>
+                .btn-fayl {
+  background-color: #12396b;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+            </style>
         </div>
     
 
         <div>
-            <button type="submit">create</button>
+            <button type="submit" class="btn success">Объявления</button>
+            <style>
+                .btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Green */
+.success {
+  border-color: #04AA6D;
+  color: green;
+}
+
+.success:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Blue */
+.info {
+  border-color: #2196F3;
+  color: dodgerblue
+}
+
+.info:hover {
+  background: #2196F3;
+  color: white;
+}
+
+            </style>
         </div>
 
 
@@ -79,33 +128,29 @@
 </body>
 
 <script>
-    var files = [];
-    var ins = document.getElementById('file');
-    var form = document.getElementById('my-form');
+    var fileId;
 
-    form.addEventListener('submit', e => {
+    $('#file').change(function (e) {
         e.preventDefault();
-        files = [...ins.files];
-        const toJSON = JSON.stringify(files);
-        console.log(toJSON);
-        console.log(files[0]);
-    })
-        // for (var x = 0; x < ins; x++) {
-        //     fd.append("fileToUpload[]", document.getElementById('fileToUpload').files[x]);
-        // }
 
-        // $.ajax({
-        //     url: 'http://localhost:8084/api/upload',
-        //     type: 'POST',
-        //     data: fd,
-        //     success: function (data) {
-        //         // fileId = data
-        //         alert(data)
-        //     },
-        //     cache: false,
-        //     contentType: false,
-        //     processData: false
-        // })
+        let fd = new FormData();
+        var ins = document.getElementById('fileToUpload').files.length;
+        for (var x = 0; x < ins; x++) {
+            fd.append("fileToUpload[]", document.getElementById('fileToUpload').files[x]);
+        }
+
+        $.ajax({
+            url: 'http://localhost:8084/api/upload',
+            type: 'POST',
+            data: fd,
+            success: function (data) {
+                // fileId = data
+                alert(data)
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        })
 
         // var formData = new FormData();
         // formData.append('file', data)
@@ -133,9 +178,32 @@
 
 
 
+    })
+
+    $('#data').submit(function (e) {
+        e.preventDefault();
+
+        console.log(fileId);
+
+        var data = {
+            'title': $('#title').val(),
+            'description': $('#desc').val(),
+        }
 
 
-  
+        $.ajax({
+            url: 'http://localhost:8084/api/announcements?imageId=' + fileId,
+            type: 'POST',
+            contentType: 'application/json',
+            dataType: 'json',
+            data: JSON.stringify(data),
+            success: function (data) {
+                console.log(data);
+            },
+        })
+
+
+    })
 </script>
 
 </html>
