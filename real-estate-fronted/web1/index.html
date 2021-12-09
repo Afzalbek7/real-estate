@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="style.css" media="screen" type="text/css" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery.store.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -29,14 +30,14 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="topnav">
-				<a style="color:rgba(199, 15, 15, 0.507);" class="active" href="#home">Realtor Home🏢</a>
+				<a style="color:rgba(199, 15, 15, 0.507);" class="active" href="#home"><h3>Realtor Home</h3></a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarNav">
 
 				<ul class="navbar-nav ml-auto">
 
 					<li class="nav-item">
-						<a style="color:black;" class="nav-link" href="viewAllAd.html">Объявления</a>
+						<a style="color:black;" class="nav-link" href="announcemens.html">Объявления</a>
 					</li>
 					<li class="nav-item">
 						<a style="color:black;" class="nav-link" href="#masthread">Kарта</a>
@@ -59,8 +60,9 @@
 					<li class="nav-item">
 						<a style="color:black;" class="nav-link" href="#contact">Номера</a>
 					</li>
-					<button type="button" onclick="window.location.href='createAd2eding.html'" class="btn btn-secondary"
+					<button type="button" onclick="window.location.href='createAd.html'" class="btn btn-secondary"
 						title="Add to Cart" style="background-color: blueviolet;">Податъ объявления</button>
+
 
 				</ul>
 			</div>
@@ -71,13 +73,13 @@
 			<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active" data-interval="10000">
-						<img src="images/room-1.jpg" class="d-block w-100" alt="..." style="width:auto;height:800px;">
+						<img src="images/komnata-2 (1).jpg" class="d-block w-100" alt="..." style="width:auto;height:800px;">
 					</div>
 					<div class="carousel-item" data-interval="2000">
-						<img src="images/home-2.jpg" class="d-block w-100" alt="..." style="width:auto;height:800px;">
+						<img src="images/komnata-2 (2).jpg" class="d-block w-100" alt="..." style="width:auto;height:800px;">
 					</div>
 					<div class="carousel-item">
-						<img src="images/home-1.jpg" class="d-block w-100" alt="..." style="width:auto;height:800px;">
+						<img src="images/komnta-3.jpg" class="d-block w-100" alt="..." style="width:auto;height:800px;">
 					</div>
 					<div class="carousel-item">
 						<img src="images/room-2.jpg" class="d-block w-100" alt="..." style="width:auto;height:800px;">
@@ -106,10 +108,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3">
-						<img src="images/bed5.jpg">
+						<img src="images/xona-4.jpg">
 					</div>
 					<div class="col-md-3">
-						<img src="images/sofa5.jpg">
+						<img src="images/xona-5.jpg">
 					</div>
 					<div class="col-md-3">
 						<img src="images/room-2.jpg">
@@ -124,7 +126,7 @@
 			</div>
 		</section>
 
-
+	<!--cardlar-->
 		<section class="new-arrivals">
 			<div id="site">
 				<div class="container">
@@ -132,14 +134,19 @@
 						<h2>Новый</h2>
 					</div>
 					<div class="row">
-						<div class="col-md-3">
-							<div class="product-top">
-								<img src="images/mirror1.jpg">
+						
+							
+							
+
+					
+<div class="col-md-4">
+							<div class="card">
+								<div class="product-top">
+								<img src="images/xi-1.jpeg" alt="Denim Jeans" style="width:100%">
 								<div class="overlay-right">
 									<button type="button" class="btn btn-secondary" title="Quick Shop">
 										<i class="fa fa-eye"></i>
 									</button>
-
 									<button type="button" class="btn btn-secondary" title="Add to Wishlist">
 										<i class="fa fa-heart-o"></i>
 									</button>
@@ -149,39 +156,44 @@
 									</button>
 								</div>
 							</div>
+								<h3>Evro kvartira</h3>
+								<p class="price">$69.999</p>
+								<p>+998 94 673 40 95</p>
+								<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Посмотрим</button>
 
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="images/xona-3 (2).jpg" alt="Avatar" class="avatar">
+	  <img src="images/xi-1.jpeg" alt="Avatar" class="avatar">
 
-							<div class="product-bottom text-center">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half-o"></i>
-								<h3>Mirror-1</h3>
-								<div class="product-description" data-name="Mirror" data-price="10">
+    </div>
 
-									<p class="product-price">&euro; 10.000</p>
-									<form class="add-to-cart" action="cart.html" method="post">
-										<div>
-											<label for="qty-2">Quantity</label>
-											<input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
-										</div>
-										<p><input type="submit" value="Add to cart" class="btn" /></p>
-									</form>
+    <div>
+		<b>
+			Юнусабад-14 <br>
+			2/2/4 <br>
+			2*6 балкон <br>
+			С мебел техника <br>
+			Цена: 47500 <br>
+		</b>
+	</div>
+  </form>
+</div>
+							  </div>
 
-								</div>
-							</div>
-						</div>
+</div>
+<div class="col-md-4">
 
-
-						<div class="col-md-3">
-							<div class="product-top">
-								<img src="images/sofa1.jpg">
+							  <div class="card">
+								<div class="product-top">
+								<img src="images/u-2.jpg" alt="Denim Jeans" style="width:100%">
 								<div class="overlay-right">
 									<button type="button" class="btn btn-secondary" title="Quick Shop">
 										<i class="fa fa-eye"></i>
 									</button>
-
 									<button type="button" class="btn btn-secondary" title="Add to Wishlist">
 										<i class="fa fa-heart-o"></i>
 									</button>
@@ -191,40 +203,49 @@
 									</button>
 								</div>
 							</div>
+								<h3>Xi-tech uchastka</h3>
+								<p class="price">$250.000</p>
+								<p>+998 93 505 85 89</p>
+								<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Посмотрим</button>
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+	  <img src="images/u-2.jpg" alt="Avatar" class="avatar">
+      <img src="images/xona-9 (2).jpg" alt="Avatar" class="avatar">
+	  <img src="images/s-2.jpg" alt="Avatar" class="avatar">
+
+    </div>
+
+    <div>
+		<b>
+			Юнусабад Исломобод <br>
+			4,5 сотка <br>
+			10 комната <br>
+			350 м2 <br>
+			Хи-теч каробка <br>
+			Цена: 250 000 <br>
+		</b>
+	</div>
+  </form>
+</div>
+							  </div>
+
+						
 
 
-							<div class="product-bottom text-center">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half-o"></i>
-								<h3>Couch</h3>
-								<div class="product-description" data-name="Couch" data-price="15">
 
-									<p class="product-price">&euro; 15.000</p>
-									<form class="add-to-cart" action="cart.html" method="post">
-										<div>
-											<label for="qty-2">Quantity</label>
-											<input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
-										</div>
-										<p><input type="submit" value="Add to cart" class="btn" /></p>
-									</form>
-
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="col-md-3">
-							<div class="product-top">
-								<img src="images/table1.jpg">
+</div>
+<div class="col-md-4">
+							  <div class="card">
+								<div class="product-top">
+								<img src="images/xi-2.jpg" alt="Denim Jeans" style="width:100%">
 								<div class="overlay-right">
 									<button type="button" class="btn btn-secondary" title="Quick Shop">
 										<i class="fa fa-eye"></i>
 									</button>
-
 									<button type="button" class="btn btn-secondary" title="Add to Wishlist">
 										<i class="fa fa-heart-o"></i>
 									</button>
@@ -234,247 +255,40 @@
 									</button>
 								</div>
 							</div>
+								<h3>Evro kvartira</h3>
+								<p class="price">$59.000</p>
+								<p>+998 99 832 98 98</p>
+								<button onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Посмотрим</button>
 
+<div id="id03" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="images/d-1.jpg" alt="Avatar" class="avatar">
+	  <img src="images/xona-1.jpg" alt="Avatar" class="avatar">
+	  	  <img src="images/xi-2.jpg" alt="Avatar" class="avatar">
 
-							<div class="product-bottom text-center">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half-o"></i>
-								<h3>Table</h3>
-								<div class="product-description" data-name="Table" data-price="14">
+    </div>
 
-									<p class="product-price">&euro; 14</p>
-									<form class="add-to-cart" action="cart.html" method="post">
-										<div>
-											<label for="qty-2">Quantity</label>
-											<input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
-										</div>
-										<p><input type="submit" value="Add to cart" class="btn" /></p>
-									</form>
+    <div>
+		<b>
+			Юнусабад Исломобод <br>
+			4,5 сотка <br>
+			10 комната <br>
+			350 м2 <br>
+			Хи-теч каробка <br>
+			Цена: 170000 <br>
+		</b>
+	</div>
+  </form>
+</div>
+							  </div>
+							
 
-								</div>
-							</div>
-						</div>
+							  </div>
+</div>
 
-
-
-						<div class="col-md-3">
-							<div class="product-top">
-								<img src="images/bed1.jpg">
-								<div class="overlay-right">
-									<button type="button" class="btn btn-secondary" title="Quick Shop">
-										<i class="fa fa-eye"></i>
-									</button>
-
-									<button type="button" class="btn btn-secondary" title="Add to Wishlist">
-										<i class="fa fa-heart-o"></i>
-									</button>
-
-									<button type="button" class="btn btn-secondary" title="Add to Cart">
-										<i class="fa fa-shopping-cart"></i>
-									</button>
-								</div>
-							</div>
-
-
-							<div class="product-bottom text-center">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half-o"></i>
-								<h3>Bed</h3>
-								<div class="product-description" data-name="Bed" data-price="30">
-
-									<p class="product-price">&euro; 30.000</p>
-									<form class="add-to-cart" action="cart.html" method="post">
-										<div>
-											<label for="qty-2">Quantity</label>
-											<input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
-										</div>
-										<p><input type="submit" value="Add to cart" class="btn" /></p>
-									</form>
-
-								</div>
-							</div>
-						</div>
-
-					</div>
-
-
-
-					<div class="row">
-						<div class="col-md-3">
-							<div class="product-top">
-								<img src="images/mirror2.jpg">
-								<div class="overlay-right">
-									<button type="button" class="btn btn-secondary" title="Quick Shop">
-										<i class="fa fa-eye"></i>
-									</button>
-
-									<button type="button" class="btn btn-secondary" title="Add to Wishlist">
-										<i class="fa fa-heart-o"></i>
-									</button>
-
-									<button type="button" class="btn btn-secondary" title="Add to Cart">
-										<i class="fa fa-shopping-cart"></i>
-									</button>
-								</div>
-							</div>
-
-
-							<div class="product-bottom text-center">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half-o"></i>
-								<h3>Mirror-1</h3>
-								<div class="product-description" data-name="Mirror-1" data-price="31">
-
-									<p class="product-price">&euro; 31.000</p>
-									<form class="add-to-cart" action="cart.html" method="post">
-										<div>
-											<label for="qty-2">Quantity</label>
-											<input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
-										</div>
-										<p><input type="submit" value="Add to cart" class="btn" /></p>
-									</form>
-
-								</div>
-							</div>
-						</div>
-
-
-						<div class="col-md-3">
-							<div class="product-top">
-								<img src="images/sofa2.jpg">
-								<div class="overlay-right">
-									<button type="button" class="btn btn-secondary" title="Quick Shop">
-										<i class="fa fa-eye"></i>
-									</button>
-
-									<button type="button" class="btn btn-secondary" title="Add to Wishlist">
-										<i class="fa fa-heart-o"></i>
-									</button>
-
-									<button type="button" class="btn btn-secondary" title="Add to Cart">
-										<i class="fa fa-shopping-cart"></i>
-									</button>
-								</div>
-							</div>
-
-
-							<div class="product-bottom text-center">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half-o"></i>
-								<h3>Couch</h3>
-								<div class="product-description" data-name="Couch" data-price="30">
-
-									<p class="product-price">&euro; 30.000</p>
-									<form class="add-to-cart" action="cart.html" method="post">
-										<div>
-											<label for="qty-2">Quantity</label>
-											<input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
-										</div>
-										<p><input type="submit" value="Add to cart" class="btn" /></p>
-									</form>
-
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="col-md-3">
-							<div class="product-top">
-								<img src="images/table2.jpg">
-								<div class="overlay-right">
-									<button type="button" class="btn btn-secondary" title="Quick Shop">
-										<i class="fa fa-eye"></i>
-									</button>
-
-									<button type="button" class="btn btn-secondary" title="Add to Wishlist">
-										<i class="fa fa-heart-o"></i>
-									</button>
-
-									<button type="button" class="btn btn-secondary" title="Add to Cart">
-										<i class="fa fa-shopping-cart"></i>
-									</button>
-								</div>
-							</div>
-
-
-							<div class="product-bottom text-center">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half-o"></i>
-								<h3>Table</h3>
-								<div class="product-description" data-name="Table" data-price="16">
-
-									<p class="product-price">&euro; 16.000</p>
-									<form class="add-to-cart" action="cart.html" method="post">
-										<div>
-											<label for="qty-2">Quantity</label>
-											<input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
-										</div>
-										<p><input type="submit" value="Add to cart" class="btn" /></p>
-									</form>
-
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="col-md-3">
-							<div class="product-top">
-								<img src="images/bed2.jpg">
-								<div class="overlay-right">
-									<button type="button" class="btn btn-secondary" title="Quick Shop">
-										<i class="fa fa-eye"></i>
-									</button>
-
-									<button type="button" class="btn btn-secondary" title="Add to Wishlist">
-										<i class="fa fa-heart-o"></i>
-									</button>
-
-									<button type="button" class="btn btn-secondary" title="Add to Cart">
-										<i class="fa fa-shopping-cart"></i>
-									</button>
-								</div>
-							</div>
-
-
-							<div class="product-bottom text-center">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half-o"></i>
-								<h3>Bed</h3>
-								<div class="product-description" data-name="Bed" data-price="40">
-
-									<p class="product-price">&euro; 40.000</p>
-									<form class="add-to-cart" action="cart.html" method="post">
-										<div>
-											<label for="qty-2">Quantity</label>
-											<input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
-										</div>
-										<p><input type="submit" value="Add to cart" class="btn" /></p>
-									</form>
-
-								</div>
-							</div>
-						</div>
-					</div>
 
 
 
@@ -490,174 +304,176 @@
 			<div id="site">
 				<div class="container">
 					<div class="title-box">
-						<h2>Sotuvda</h2>
+						<h2>B продаже</h2>
 					</div>
 					<div class="row">
-						<div class="col-md-3">
-							<div class="product-top">
-								<img src="images/mirror3.jpg">
-								<div class="overlay-right">
-									<button type="button" class="btn btn-secondary" title="Quick Shop">
-										<i class="fa fa-eye"></i>
-									</button>
+						
+							
+							
 
-									<button type="button" class="btn btn-secondary" title="Add to Wishlist">
-										<i class="fa fa-heart-o"></i>
-									</button>
+					
+						<div class="col-md-4">
+													<div class="card">
+														<div class="product-top">
+														<img src="images/u-2.jpg" alt="Denim Jeans" style="width:100%">
+														<div class="overlay-right">
+															<button type="button" class="btn btn-secondary" title="Quick Shop">
+																<i class="fa fa-eye"></i>
+															</button>
+															<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+																<i class="fa fa-heart-o"></i>
+															</button>
+						
+															<button type="button" class="btn btn-secondary" title="Add to Cart">
+																<i class="fa fa-shopping-cart"></i>
+															</button>
+														</div>
+													</div>
+														<h3>Evro uchastka</h3>
+														<p class="price">$170.000</p>
+														<p>+998 93 505 85 89</p>
+														<button onclick="document.getElementById('id04').style.display='block'" style="width:auto;">Посмотрим</button>
 
-									<button type="button" class="btn btn-secondary" title="Add to Cart">
-										<i class="fa fa-shopping-cart"></i>
-									</button>
-								</div>
-							</div>
+<div id="id04" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="images/u-2.jpg" alt="Avatar" class="avatar">
+	  <img src="images/xi-3.jpg" alt="Avatar" class="avatar">
+	  <img src="images/s-1.jpg" alt="Avatar" class="avatar">
+    </div>
 
-
-							<div class="product-bottom text-center">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half-o"></i>
-								<h3>Mirror-1</h3>
-								<div class="product-description" data-name="Mirror-1" data-price="12">
-
-									<p class="product-price">&euro; 12</p>
-									<form class="add-to-cart" action="cart.html" method="post">
-										<div>
-											<label for="qty-2">Quantity</label>
-											<input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
-										</div>
-										<p><input type="submit" value="Add to cart" class="btn" /></p>
-									</form>
-
-								</div>
-							</div>
+    <div>
+		<b>
+			Юнусабад Исломобод<br>
+			4,5 сотка<br>
+			10 комната<br>
+			350 м2<br>
+			Хи-теч каробка<br>
+			Цена: 170000<br>
+		</b>
+	</div>
+  </form>
+</div>
+													  </div>
+						
 						</div>
+						<div class="col-md-4">
+						
+													  <div class="card">
+														<div class="product-top">
+														<img src="images/xona-3 (2).jpg" alt="Denim Jeans" style="width:100%">
+														<div class="overlay-right">
+															<button type="button" class="btn btn-secondary" title="Quick Shop">
+																<i class="fa fa-eye"></i>
+															</button>
+															<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+																<i class="fa fa-heart-o"></i>
+															</button>
+						
+															<button type="button" class="btn btn-secondary" title="Add to Cart">
+																<i class="fa fa-shopping-cart"></i>
+															</button>
+														</div>
+													</div>
+														<h3>Evro kvartira</h3>
+														<p class="price">$42.500</p>
+														<p>+998 99 832 98 98</p>
+														<button onclick="document.getElementById('id05').style.display='block'" style="width:auto;">Посмотрим</button>
 
+<div id="id05" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="images/xona-3 (2).jpg" alt="Avatar" class="avatar">
+	  <img src="images/d-1.jpg" alt="Avatar" class="avatar">
+	  <img src="images/s-1.jpg" alt="Avatar" class="avatar">
+    </div>
 
-						<div class="col-md-3">
-							<div class="product-top">
-								<img src="images/sofa3.jpg">
-								<div class="overlay-right">
-									<button type="button" class="btn btn-secondary" title="Quick Shop">
-										<i class="fa fa-eye"></i>
-									</button>
+    <div>
+		<b>
+			Юнусабад-14<br>
+			2/4/5 Неторец<br>
+			С мебел техника<br>
+			Место супер<br>
+			Орентир Самара<br>
+			Цена: 42500 $<br>
+            99 832 98 98<br>
+		</b>
+	</div>
+  </form>
+</div>
 
-									<button type="button" class="btn btn-secondary" title="Add to Wishlist">
-										<i class="fa fa-heart-o"></i>
-									</button>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
 
-									<button type="button" class="btn btn-secondary" title="Add to Cart">
-										<i class="fa fa-shopping-cart"></i>
-									</button>
-								</div>
-							</div>
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 
-
-							<div class="product-bottom text-center">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half-o"></i>
-								<h3>Couch</h3>
-
-								<div class="product-description" data-name="Couch" data-price="34">
-
-									<p class="product-price">&euro; 34</p>
-									<form class="add-to-cart" action="cart.html" method="post">
-										<div>
-											<label for="qty-2">Quantity</label>
-											<input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
-										</div>
-										<p><input type="submit" value="Add to cart" class="btn" /></p>
-									</form>
-
-								</div>
-							</div>
+													  </div>
+						
+												
+						
+						
+						
 						</div>
+						<div class="col-md-4">
+													  <div class="card">
+														<div class="product-top">
+														<img src="images/xona-9 (2).jpg" alt="Denim Jeans" style="width:100%">
+														<div class="overlay-right">
+															<button type="button" class="btn btn-secondary" title="Quick Shop">
+																<i class="fa fa-eye"></i>
+															</button>
+															<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+																<i class="fa fa-heart-o"></i>
+															</button>
+						
+															<button type="button" class="btn btn-secondary" title="Add to Cart">
+																<i class="fa fa-shopping-cart"></i>
+															</button>
+														</div>
+													</div>
+														<h3>Evro kvartira</h3>
+														<p class="price">$46.000</p>
+														<p>+998 93 505 85 89</p>
+														<button onclick="document.getElementById('id06').style.display='block'" style="width:auto;">Посмотрим</button>
 
+<div id="id06" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id06').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="images/xona-3 (2).jpg" alt="Avatar" class="avatar">
+	  <img src="images/s-1.jpg" alt="Avatar" class="avatar">
+	  <img src="images/k-1.jpg" alt="Avatar" class="avatar">
+    </div>
 
-
-						<div class="col-md-3">
-							<div class="product-top">
-								<img src="images/table3.jpg">
-								<div class="overlay-right">
-									<button type="button" class="btn btn-secondary" title="Quick Shop">
-										<i class="fa fa-eye"></i>
-									</button>
-
-									<button type="button" class="btn btn-secondary" title="Add to Wishlist">
-										<i class="fa fa-heart-o"></i>
-									</button>
-
-									<button type="button" class="btn btn-secondary" title="Add to Cart">
-										<i class="fa fa-shopping-cart"></i>
-									</button>
-								</div>
-							</div>
-
-
-							<div class="product-bottom text-center">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half-o"></i>
-								<h3>Table</h3>
-								<div class="product-description" data-name="Table" data-price="20">
-
-									<p class="product-price">&euro; 20</p>
-									<form class="add-to-cart" action="cart.html" method="post">
-										<div>
-											<label for="qty-2">Quantity</label>
-											<input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
-										</div>
-										<p><input type="submit" value="Add to cart" class="btn" /></p>
-									</form>
-
-								</div>
-							</div>
+    <div>
+		<b>
+			Юнусабад - 5 <br>
+			2/3/5<br>
+			2*6 балъкон<br>
+			Хи-теч Неторец<br>
+			Цена : 46500<br>
+		
+		</b>
+	</div>
+  </form>
+</div>
+													  </div>
+													
+						
+													  </div>
 						</div>
-
-
-
-						<div class="col-md-3">
-							<div class="product-top">
-								<img src="images/bed3.jpg">
-								<div class="overlay-right">
-									<button type="button" class="btn btn-secondary" title="Quick Shop">
-										<i class="fa fa-eye"></i>
-									</button>
-
-									<button type="button" class="btn btn-secondary" title="Add to Wishlist">
-										<i class="fa fa-heart-o"></i>
-									</button>
-
-									<button type="button" class="btn btn-secondary" title="Add to Cart">
-										<i class="fa fa-shopping-cart"></i>
-									</button>
-								</div>
-							</div>
-
-
-							<div class="product-bottom text-center">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half-o"></i>
-								<h3>Bed</h3>
-								<div class="product-description" data-name="Bed" data-price="60">
-
-									<p class="product-price">&euro; 60</p>
-									<form class="add-to-cart" action="cart.html" method="post">
-										<div>
-											<label for="qty-2">Quantity</label>
-											<input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
-										</div>
-										<p><input type="submit" value="Add to cart" class="btn" /></p>
-									</form>
 
 								</div>
 							</div>
@@ -690,9 +506,9 @@
 
 		<!------About Section------->
 		<section id="about">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
+			<div class="container" style="background-color: blanchedalmond;">
+				<div class="row" style="margin-bottom: 15px;margin-left: 8px;">
+					<div class="col-md-5">
 						<h2>Наши сервисы</h2>
 						<div class="about-content">
 							Уважаемые покупатели, наша компания предоставит вам такие услуги, как покупка,
@@ -700,13 +516,14 @@
 							нашими дилерами.
 
 						</div>
-						<button type="button" class="btn btn-primary">Read More>>
+						<button type="button" class="btn btn-primary"> 
+							Читатъ >>
 
-						</button>
+						</button> 
 
 					</div>
-					<div class="col-md-6 skills-bar">
-						<p>Delivery Rate</p>
+					 <div class="col-md-6 skills-bar">
+						<!--<p>Delivery Rate</p>
 						<div class="progress">
 							<div class="progress-bar" style="width:85%;">85%</div>
 						</div>
@@ -719,8 +536,11 @@
 						<p>Happy Employee</p>
 						<div class="progress">
 							<div class="progress-bar" style="width:90%;">90%</div>
-						</div>
+						</div> -->
+						
+							<img src="./images/call-center.jpg" alt="1" > 
 
+						
 					</div>
 				</div>
 
@@ -731,6 +551,14 @@
 
 
 			<!------Services Section------->
+
+			<div class="container">
+
+			</div>
+			  
+			  <!--gfdgvdf-->
+
+
 			<section id="services">
 
 				<div class="container">
@@ -788,7 +616,7 @@
 								</ul>
 							</div>
 							<h2>Mamadjonov Javdat</h2>
-							<h3>Director</h3>
+							<h3>Founder</h3>
 
 						</div>
 
@@ -796,19 +624,19 @@
 							<div class="img-box">
 								<img src="./images/bahrom.jpg" class="img-responsive">
 								<ul>
-									<a href="https://www.facebook.com/">
+									<a href="https://www.facebook.com/baxrom_70072">
 										<li><i class="fa fa-facebook"></i></li>
 									</a>
-									<a href="https://www.instagram.com/">
+									<a href="https://www.instagram.com/baxrom_70072">
 										<li><i class="fa fa-instagram"></i></li>
 									</a>
-									<a href="https://www.telegram.com/home">
+									<a href="https://www.telegram.com/Baxrom_9211">
 										<li><i class="fa fa-telegram"></i></li>
 									</a>
 								</ul>
 							</div>
 							<h2>Qodirov Baxromxo'ja</h2>
-							<h3>Rieltor</h3>
+							<h3>Director</h3>
 
 						</div>
 
@@ -852,6 +680,90 @@
 							<h3>Rieltor</h3>
 
 						</div>
+
+
+
+						<div class="col-md-3 profile-pic text-center">
+							<div class="img-box">
+								<img src="./images/veronika.jpg" class="img-responsive">
+								<ul>
+									<a href="https://www.facebook.com/VeronikaDmitrievna">
+										<li><i class="fa fa-facebook"></i></li>
+									</a>
+									<a href="https://www.instagram.com/VeronikaDmitrievna">
+										<li><i class="fa fa-instagram"></i></li>
+									</a>
+									<a href="https://www.telegram.org/VeronikaDmitrievna">
+										<li><i class="fa fa-telegram"></i></li>
+									</a>
+								</ul>
+							</div>
+							<h2>Veronika Dimitrievna</h2>
+							<h3>Rieltor</h3>
+
+						</div>
+
+
+						<div class="col-md-3 profile-pic text-center">
+							<div class="img-box">
+								<img src="./images/fazliddin.jpg" class="img-responsive">
+								<ul>
+									<a href="https://www.facebook.com/fazliddin_ulugbekov">
+										<li><i class="fa fa-facebook"></i></li>
+									</a>
+									<a href="https://www.instagram.com/fazliddin_ulugbekov">
+										<li><i class="fa fa-instagram"></i></li>
+									</a>
+									<a href="https://www.telegram.org/A_Dubai4141">
+										<li><i class="fa fa-telegram"></i></li>
+									</a>
+								</ul>
+							</div>
+							<h2>Fazliddin Ulugbekov</h2>
+							<h3>Rieltor</h3>
+
+						</div>
+
+						<div class="col-md-3 profile-pic text-center">
+							<div class="img-box">
+								<img src="./images/dilya.jpg" class="img-responsive">
+								<ul>
+									<a href="https://www.facebook.com/diloromxon_toxtamurodova">
+										<li><i class="fa fa-facebook"></i></li>
+									</a>
+									<a href="https://www.instagram.com/diloromxon_toxtamurodova">
+										<li><i class="fa fa-instagram"></i></li>
+									</a>
+									<a href="https://www.telegram.org/Dilyaxon199101">
+										<li><i class="fa fa-telegram"></i></li>
+									</a>
+								</ul>
+							</div>
+							<h2>Dilorom To'xtmurodova</h2>
+							<h3>Rieltor</h3>
+
+						</div>
+
+						<div class="col-md-3 profile-pic text-center">
+							<div class="img-box">
+								<img src="./images/bobur.jpg" class="img-responsive">
+								<ul>
+									<a href="https://www.facebook.com/jakhongirkhusanov">
+										<li><i class="fa fa-facebook"></i></li>
+									</a>
+									<a href="https://www.instagram.com/bobur_8589">
+										<li><i class="fa fa-instagram"></i></li>
+									</a>
+									<a href="https://www.telegram.org/bobur_8589">
+										<li><i class="fa fa-telegram"></i></li>
+									</a>
+								</ul>
+							</div>
+							<h2>Bobur</h2>
+							<h3>Rieltor</h3>
+
+						</div>
+
 					</div>
 				</div>
 
@@ -884,14 +796,14 @@
 						<div class="col-md-6 contact-info">
 							<div class="follow"><b><i class="fa fa-map-marker"></i> </b>Юнусабадский район, 3-квартал
 							</div>
-							<div class="follow"><b><i class="fa fa-mobile"></i> </b>+998 99 832 98 98</div>
-							<div class="follow"><b><i class="fa fa-envelope"></i> </b>jakhongirkhusanov2805@gmail.com
+							<div class="follow"><b><i class="fa fa-mobile"></i> </b>+998 93 505 85 89</div>
+							<div class="follow"><b><i class="fa fa-envelope"></i> </b>javdatmamadjonov2021@gmail.com
 							</div>
 
 
 							<div class="follow"><label><b>Get Social </b></label>
-								<a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
-								<a href="https://www.youtube.com/"><i class="fa fa-youtube-play"></i></a>
+								<a href="https://www.facebook.com/javdat.rieltor"><i class="fa fa-facebook"></i></a>
+								<a href="https://www.youtube.com/realtor_home"><i class="fa fa-youtube-play"></i></a>
 								<a href="https://twitter.com/login"><i class="fa fa-twitter"></i></a>
 								<a href="https://myaccount.google.com/"><i class="fa fa-google-plus"></i></a>
 
